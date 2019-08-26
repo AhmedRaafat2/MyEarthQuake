@@ -34,8 +34,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        String[]ffff={"ddd"};
-        int i = ffff.length;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ListView listView = findViewById(R.id.list);
@@ -52,9 +50,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         EarthQuakeAdapter adapter = new EarthQuakeAdapter(MainActivity.this,R.layout.earth_quake_list_item,this.earthQuakes);
         Log.e("a7a",""+earthQuakes.size());
 
-        for(int j = 0 ; j < earthQuakes.size() ;j++){
+        for(int i = 0 ; i < earthQuakes.size() ;i++){
 
-            Log.e("Element number " , earthQuakes.get(j).getEarthQuake_Place());
+            Log.e("Element number " , earthQuakes.get(i).getEarthQuake_Place());
         }
         listView.setAdapter(adapter);
 
