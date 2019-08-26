@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:id="@+id/item_earthquake"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/earthquake_Mag"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/magnitude_circle"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/nearby_place_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-medium"
+        android:maxLines="1"
+        android:textAllCaps="true"
+        android:textColor="@color/textColorEarthquakeDetails"
+        android:textSize="12sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toEndOf="@id/earthquake_Mag"
+        app:layout_constraintBottom_toTopOf="@id/earthquake_place_tv"
+        app:layout_constraintTop_toTopOf="parent"
+        tool:text="@tools:sample/full_names" />
+
+    <TextView
+        android:id="@+id/earthquake_place_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/textColorEarthquakeLocation"
+        android:textSize="16sp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/earthquake_Mag"
+        app:layout_constraintStart_toEndOf="@id/earthquake_Mag"
+        app:layout_constraintTop_toBottomOf="@id/nearby_place_tv"
+        tool:text="@tools:sample/full_names" />
+
+    <TextView
+        android:id="@+id/earthquake_date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:textColor="@color/textColorEarthquakeDetails"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/earthquake_time_tv"
+        tool:text="@tools:sample/date/mmddyy" />
+
+    <TextView
+        android:id="@+id/earthquake_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:textColor="@color/textColorEarthquakeDetails"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/earthquake_Mag"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/earthquake_date_tv"
+        tool:text="@tools:sample/date/hhmm" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
